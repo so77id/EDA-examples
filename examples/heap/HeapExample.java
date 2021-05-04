@@ -55,7 +55,7 @@ public class HeapExample {
       }
 
       private boolean less(int i, int j){
-        return this.cmp.compare(this.data[i], this.data[j]) < 0;
+        return this.cmp.compare(this.data[i], this.data[j]) > 0;
       }
 
       private void exch(int i, int j){
@@ -103,12 +103,10 @@ public class HeapExample {
     String buff2;
 
     Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-    // Heap<Pair<Integer, String>> heap = new Heap<Pair<Integer, String>>((a, b) -> {
-      
-    //   return (a.first() + a.second().charAt(0)) - (b.first() + b.second().charAt(0));
-    // });
-    PriorityQueue<Pair<Integer, String>> heap = new 
-             PriorityQueue<Pair<Integer, String>>(10, (a, b) -> {return b.first()  - a.first();}); 
+    Heap<Pair<Integer, String>> heap = new Heap<Pair<Integer, String>>((a, b) -> {
+      return a.first() - b.first();
+      // return (a.first() + a.second().charAt(0)) - (b.first() + b.second().charAt(0));
+    });
 
     n = scanner.nextInt();
     for(int i=0; i<n; i++) {
@@ -117,11 +115,29 @@ public class HeapExample {
 
       Pair tmp = new Pair(buff1, buff2);
 
-      heap.add(tmp);
+      heap.insert(tmp);
     }
     System.out.println("------");
-    while(!heap.isEmpty()) {
-      Pair tmp = heap.poll();
+    while(!heap.empty()) {
+      Pair tmp = heap.delMax();
+      System.out.println(tmp.first()+ " " + tmp.second());
+    }
+
+    PriorityQueue<Pair<Integer, String>> heap2 = new 
+             PriorityQueue<Pair<Integer, String>>(10, (a, b) -> {return a.first()  - b.first();}); 
+
+    n = scanner.nextInt();
+    for(int i=0; i<n; i++) {
+      buff1 = scanner.nextInt();
+      buff2 = scanner.next();
+
+      Pair tmp = new Pair(buff1, buff2);
+
+      heap2.add(tmp);
+    }
+    System.out.println("------");
+    while(!heap2.isEmpty()) {
+      Pair tmp = heap2.poll();
       System.out.println(tmp.first()+ " " + tmp.second());
     }
   }

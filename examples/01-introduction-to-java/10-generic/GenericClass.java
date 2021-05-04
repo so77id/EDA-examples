@@ -7,31 +7,31 @@ class GenericClass
     {
         // Pair p1 = new Pair(1, 2);
         // System.out.println("Pair  first:" + p1.getFirst()  + " second:" + p1.getSecond());
-
+        //
         // p1.setFirst(3);
-        // p1.setSecond(5);        
-
+        // p1.setSecond(5);
+        //
         // System.out.println("Pair  first:" + p1.getFirst()  + " second:" + p1.getSecond());
+        //
+        //
+        // System.out.println("------------------");
+
+        // PairGeneric p2 = new PairGeneric<Integer>(1, 0);
+        // System.out.println("Pair  first:" + p2.getFirst()  + " second:" + p2.getSecond());
+        //
+        // p2.setFirst(9);
+        // p2.setSecond(100);
+        //
+        // System.out.println("Pair  first:" + p2.getFirst()  + " second:" + p2.getSecond());
 
 
         // System.out.println("------------------");
-
-        // PairGeneric p2 = new PairGeneric<String>("hola", "chao");
-        // System.out.println("Pair  first:" + p2.getFirst()  + " second:" + p2.getSecond());
-
-        // p2.setFirst("!!");
-        // p2.setSecond("??");        
-
-        // System.out.println("Pair  first:" + p2.getFirst()  + " second:" + p2.getSecond());
-
-
-        System.out.println("------------------");
-
+        //
         PairGenericTwo p3 = new PairGenericTwo<Integer, String>(1, "string");
         System.out.println("Pair  first:" + p3.getFirst()  + " second:" + p3.getSecond());
 
         p3.setFirst(3);
-        p3.setSecond("Another string");        
+        p3.setSecond("Another string");
 
         System.out.println("Pair  first:" + p3.getFirst()  + " second:" + p3.getSecond());
     }

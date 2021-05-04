@@ -24,23 +24,37 @@ class ArrayExample
         int[][] matrix = { {1, 1, 1}, {1, 1, 1}, {1, 1, 1}, {1, 1, 1} };
 
         System.out.println("Print numbers");
-        for (int i = 0; i < matrix.length; ++i) {
-          for(int j = 0; j < matrix[i].length; ++j) {
-            System.out.print(matrix[i][j]+", ");
+        for(int[] row:matrix) {
+          for(int ele:row) {
+            System.out.print(ele + ", ");
           }
-          System.out.println("\n-------");
+          System.out.print("\n");
         }
+
+        // for (int i = 0; i < matrix.length; ++i) {
+        //   for(int j = 0; j < matrix[i].length; ++j) {
+        //     System.out.print(matrix[i][j]+", ");
+        //   }
+        //   System.out.println("\n-------");
+        // }
 
 
         System.out.println("Print matrix with diferente row sizes");
         int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7}, {8, 9}, {0} };
 
-        System.out.println("Print numbers");
-        for (int i = 0; i < myNumbers.length; ++i) {
-          for(int j = 0; j < myNumbers[i].length; ++j) {
-            System.out.print(myNumbers[i][j]+", ");
+        for(int[] row:myNumbers) {
+          for(int ele:row) {
+            System.out.print(ele + ", ");
           }
-          System.out.println("\n-------");
+          System.out.print("\n");
         }
+
+        // System.out.println("Print numbers");
+        // for (int i = 0; i < myNumbers.length; ++i) {
+        //   for(int j = 0; j < myNumbers[i].length; ++j) {
+        //     System.out.print(myNumbers[i][j]+", ");
+        //   }
+        //   System.out.println("\n-------");
+        // }
     }
 }
